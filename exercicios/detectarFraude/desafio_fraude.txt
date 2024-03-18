@@ -1,0 +1,64 @@
+Desafio - Detecção de Fraude em Transações
+
+- Objetivo:
+Desenvolver um algoritmo capaz de identificar transações fraudulentas em uma base de dados de transações financeiras.
+
+- Descrição:
+Você trabalha em uma empresa de análise de dados financeiros e foi designado para desenvolver um programa que identifique possíveis fraudes 
+em transações financeiras. A empresa coletou uma grande base de dados de transações, e você precisa criar um algoritmo eficiente para 
+analisá-las e identificar aquelas que são suspeitas de serem fraudulentas.
+
+- Base de Dados:
+A base de dados contém informações sobre as transações, sendo cada transação representada por uma tupla com os seguintes campos:
+
+* ID da transação: um número inteiro único que identifica cada transação.
+* Valor da transação: um número decimal representando o valor monetário da transação.
+* Data e hora da transação: uma string no formato "HH:MM:SS" que indica quando a transação ocorreu.
+
+- Registro Inicial:
+A base de dados terá um registro inicial com os seguintes campos:
+
+* ID da transação: 0 (valor fixo para representar o registro inicial).
+* Valor inicial do limite de transação: um número decimal que define o limite de valor para considerar uma transação como fraudulenta no dia.
+* Horário do registro inicial: uma string no formato "00:00:00".
+
+- Regras:
+
+1. As transações são consideradas fraudulentas se seu valor for 20% maior que a média dos valores das últimas 
+5 transações que não foram fraudulentas. 
+
+2. Caso não existam 5 transações normais anteriormente, o limite será o valor inicial definido no registro inicial.
+
+3. Se houver uma transação fraudulenta, todas as transações realizadas nos próximos 60 minutos após essa transação também 
+serão consideradas fraudulentas. O tempo não deve reiniciar caso haja uma transação dentro desse 60 minutos.
+
+Tarefa:
+Desenvolva uma função chamada detectar_fraudes(transacoes) que receba como entrada a base de dados de transações. 
+A função deve retornar uma lista contendo os IDs das transações que são suspeitas de fraude, de acordo com as regras 
+estabelecidas.
+
+Exemplo:
+transacoes = [
+    (0,  1000.00, "00:00:00"),  # Registro inicial com limite de R$ 1000.00
+    (1,  100.00,  "12:00:00"),
+    (2,  1500.00, "12:05:00"),
+    (3,  200.00,  "13:10:00"),
+    (4,  300.00,  "13:40:00"),
+    (5,  400.00,  "14:20:00"),
+    (6,  1200.00, "15:00:00"),
+    (7,  3000.00, "15:40:00"),
+    (8,  1200.00, "16:20:00"),
+    (9,  500.00,  "17:00:00"),
+    (10, 600.00,  "17:40:00"),
+    (11, 800.00,  "19:30:00"),
+    (12, 700.00,  "19:40:00")
+]
+suspeitas_de_fraude = detectar_fraudes(transacoes)
+print(suspeitas_de_fraude)  # Saída esperada: [2, 7, 8, 11, 12]
+
+- Observação
+No exemplo, vemos que a transação 2 é maior que o limite inicial, portanto é fraudulenta. 
+A transação 7 é mais que 20% maior do que a média das últimas 5 transações normais (1, 3, 4, 5 e 6). 
+A transação 8 ocorreu menos de 60 minutos após a transação 7, portanto também é suspeita. 
+Mesmo caso da transação 12, que ocorreu 10 minutos após a transação 11, que por sua vez é suspeita 
+por ter um valor 20% maior que as transações normais anteriores (4, 5, 6, 9 e 10).
