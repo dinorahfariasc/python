@@ -26,8 +26,3 @@ def addFilme(dictFilmes):
         print('Filme adicionado com sucesso')
     else:
         print('Erro ao adicionar filme')
-
-infos = {'La la land': ['2016','Damien Chazelle','emma stone, ryan gosling'], 'The handmaiden': ['2016', 'Park Chan-wook', 'Kim Min-hee, Ha Jung-woo, Cho Jin-woong'], 'Scream': ['1996', 'Wes Craven', 'Neve Campbell, Courteney Cox, David Arquette'], 'Poor things': ['2023', 'Yorgos Lanthimos', 'Emma Stone, Mark Ruffalo, Willem Dafoe']}
-palavra = random.choice(list(infos.keys()))
-dicas = infos[palavra]
-print(dicas)
