@@ -147,7 +147,7 @@ def jogo():
     display_menu()
     
     # dicas dos filmes
-    infos = {'La la land': ['Ano: 2016','Diretor: Damien Chazelle','Cast: emma stone, ryan gosling'], 'The handmaiden': ['Ano: 2016', 'Diretor: Park Chan-wook', 'Cast: Kim Min-hee, Ha Jung-woo, Cho Jin-woong'], 'Scream': ['Ano: 1996', 'Diretor: Wes Craven', 'Cast: Neve Campbell, Courteney Cox, David Arquette'], 'Poor things': ['Ano: 2023', 'Diretor: Yorgos Lanthimos', 'Cast: Emma Stone, Mark Ruffalo, Willem Dafoe']}
+    infos = {'La la land': ['Ano: 2016','Direcao: Damien Chazelle','Cast: emma stone, ryan gosling'], 'The handmaiden': ['Ano: 2016', 'Direcao: Park Chan-wook', 'Cast: Kim Min-hee, Ha Jung-woo, Cho Jin-woong'], 'Scream': ['Ano: 1996', 'Direcao: Wes Craven', 'Cast: Neve Campbell, Courteney Cox, David Arquette'], 'Poor things': ['Ano: 2023', 'Direcao: Yorgos Lanthimos', 'Cast: Emma Stone, Mark Ruffalo, Willem Dafoe']}
     
     while True:  
 
