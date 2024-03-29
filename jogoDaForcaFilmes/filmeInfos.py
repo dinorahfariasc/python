@@ -22,7 +22,7 @@ def filmeInfo():
 def addFilme(dictFilmes):
     info = filmeInfo()
     if info:
-        dictFilmes[info[0]] = [f"Ano: {info[1]}",  f"Diretor: {info[2]}", f"Cast: {info[3]}"]
+        dictFilmes[info[0]] = [f"Ano: {info[1]}",  f"Direcao: {info[2]}", f"Cast: {info[3]}"]
         print('Filme adicionado com sucesso')
     else:
         print('Erro ao adicionar filme')
